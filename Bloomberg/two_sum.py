@@ -5,13 +5,17 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         for i in range(len(nums)):
+            # subtract current loop value to get a potential match
             x = target - nums[i]
+
+            # x must be in nums array and must not be a reused index
             if x in nums and nums.index(x) != i:
                 return [i, nums.index(x)]
             
 
 solution = Solution()
 
+# test cases
 class CaseOne:
     nums = [2, 7, 11, 15]
     target = 9
