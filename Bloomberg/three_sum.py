@@ -40,7 +40,7 @@ class Solution:
                 total = nums[i] + nums[left] + nums[right]
 
                 if total == 0:
-                    nums.append([nums[i], nums[left], nums[right]])
+                    result.append([nums[i], nums[left], nums[right]])
 
                     while left < right and nums[left] == nums[left+1]:
                         left += 1
@@ -68,7 +68,7 @@ class CaseTwo:
 caseOne = CaseOne()
 caseTwo = CaseTwo()
 
-#resultOne = solution.threeSum(caseOne.nums)
+resultOne = solution.threeSum(caseOne.nums)
 resultTwo = solution.threeSum(caseTwo.nums)
 
-print(f"Result one: {resultTwo}\n")
+print(f"Result one: {resultOne}\nResult two: {resultTwo}")
