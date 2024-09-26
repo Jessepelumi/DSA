@@ -15,31 +15,31 @@
 
 class Solution:
     def reverse(self, x: int) -> int:
-        # limit
+        # integer range
         int_min, int_max = -2**31, 2**31 - 1
 
-        # reversed result
+        # variable to store revd int
         rev = 0
 
         # get the sign
         sign = -1 if x < 0 else 1
 
-        # absolute of x
         x = abs(x)
 
         while x != 0:
-            # extract the last digit
+            # store the last digit
             pop = x % 10
 
-            # remove the last digit
+            # remove the last digit & terminate loop
             x //= 10
 
             if rev > (int_max - pop) // 10:
                 return 0
             
             rev = rev * 10 + pop
-            
+
         return sign * rev
+    
     
 solution = Solution()
 
